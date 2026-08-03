@@ -5,11 +5,11 @@
 
 :root {
   --bg: #0a0d0b;
-  --bg-trans: rgba(10, 13, 11, 0.85);
+  --bg-trans: rgba(10, 13, 11, 0.88);
   --text: #e9ede6;
   --text-dim: #93a396;
-  --border: rgba(233, 237, 230, 0.1);
-  --border-bright: rgba(233, 237, 230, 0.25);
+  --border: rgba(233, 237, 230, 0.12);
+  --border-bright: rgba(233, 237, 230, 0.28);
   --radius: 4px;
   --maxw: 1120px;
 
@@ -96,8 +96,8 @@ header.nav {
   top: 0;
   z-index: 100;
   background: var(--bg-trans);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
@@ -126,7 +126,7 @@ header.nav {
   display: flex;
   align-items: center;
   gap: 3px;
-  background: rgba(21, 25, 21, 0.8);
+  background: rgba(21, 25, 21, 0.85);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 3px;
@@ -151,14 +151,14 @@ header.nav {
   background: var(--copper);
   color: #1a0f04;
   font-weight: 600;
-  box-shadow: 0 0 12px var(--copper-glow);
+  box-shadow: 0 0 14px var(--copper-glow);
 }
 
 .switcher button.on-sw.active {
   background: var(--eco);
   color: #04150a;
   font-weight: 600;
-  box-shadow: 0 0 12px var(--eco-glow);
+  box-shadow: 0 0 14px var(--eco-glow);
 }
 
 .switcher button:not(.active):hover {
@@ -234,13 +234,13 @@ header.nav {
   right: 0;
   top: 100%;
   margin-top: 8px;
-  background: rgba(14, 18, 15, 0.96);
+  background: rgba(14, 18, 15, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-bright);
   border-radius: 6px;
-  min-width: 280px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75);
+  min-width: 290px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8);
   z-index: 200;
   padding: 6px 0;
   animation: fadeInDown 0.2s ease-out forwards;
@@ -255,7 +255,7 @@ header.nav {
 .resume-dropdown-item {
   display: flex;
   flex-direction: column;
-  padding: 12px 18px;
+  padding: 11px 18px;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.15s ease;
   border-bottom: 1px solid rgba(233, 237, 230, 0.05);
@@ -398,9 +398,9 @@ h1.hero-title .split {
 }
 
 .resume-hero-bar {
-  margin-top: 30px;
+  margin-top: 32px;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -411,6 +411,13 @@ h1.hero-title .split {
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  margin-right: 4px;
+}
+
+.resume-bar-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 /* ============ ABOUT SECTION ============ */
@@ -545,9 +552,16 @@ h2.track-title {
 .track-intro {
   color: var(--text-dim);
   max-width: 70ch;
-  margin-bottom: 40px;
+  margin-bottom: 34px;
   font-size: 0.98rem;
   line-height: 1.7;
+}
+
+.track-resume-bar {
+  margin: -14px 0 40px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .subhead {
@@ -627,11 +641,6 @@ h2.track-title {
   color: var(--text-dim);
   font-style: italic;
   margin-top: 12px;
-}
-
-/* SVG Animations in diagrams */
-.diagram-panel svg path, .diagram-panel svg polyline {
-  transition: all 0.3s ease;
 }
 
 /* ============ CASE STUDY ============ */
@@ -862,10 +871,10 @@ h2.track-title {
   color: var(--border-bright);
 }
 
-/* ============ SKILLS ============ */
+/* ============ SKILLS GRID (BALANCED 3-COLUMN LAYOUT) ============ */
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -874,8 +883,12 @@ h2.track-title {
 }
 
 .skill-block {
-  padding: 22px;
-  transition: background 0.2s ease;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: background 0.25s ease;
+  min-height: 170px;
 }
 
 .hw .skill-block {
@@ -886,13 +899,17 @@ h2.track-title {
   background: var(--sw-panel-2);
 }
 
+.skill-block:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .skill-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 12px;
-  font-weight: 600;
+  margin-bottom: 14px;
+  font-weight: 700;
 }
 
 .hw .skill-label {
@@ -906,54 +923,164 @@ h2.track-title {
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .skill-tags span {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--text-dim);
-  background: rgba(10, 13, 11, 0.5);
+  font-size: 0.73rem;
+  color: var(--text);
+  background: rgba(10, 13, 11, 0.7);
   border: 1px solid var(--border);
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: var(--radius);
-  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.22s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.skill-tags span svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: currentColor;
+  transition: transform 0.2s ease;
 }
 
 .skill-tags span:hover {
-  color: var(--text);
-  border-color: var(--text-dim);
-  transform: translateY(-1px);
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* ============ SIGNATURE SEAM ============ */
+.hw .skill-tags span:hover {
+  border-color: var(--copper);
+  color: var(--copper-bright);
+}
+
+.sw .skill-tags span:hover {
+  border-color: var(--eco);
+  color: var(--eco-bright);
+}
+
+.skill-tags span:hover svg {
+  transform: scale(1.15);
+}
+
+/* ============ REDESIGNED INTERACTIVE SEAM DIVIDER ============ */
 .seam {
   position: relative;
-  height: 130px;
+  padding: 60px 0;
+  background: linear-gradient(180deg, var(--hw-panel) 0%, var(--bg) 50%, var(--sw-panel) 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
 
-.seam svg {
-  width: 100%;
-  height: 100%;
+.seam-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 120px;
+  background: radial-gradient(ellipse at center, rgba(193, 122, 61, 0.15) 0%, rgba(63, 174, 100, 0.15) 50%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
 }
 
-.seam-label {
+.seam-wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.seam-line-left {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--copper), var(--copper-bright));
+  box-shadow: 0 0 10px var(--copper-glow);
+  position: relative;
+}
+
+.seam-line-left::after {
+  content: '';
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  right: 0;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  background: var(--copper-bright);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--copper-bright);
+  animation: pulseGlow 1.8s infinite;
+}
+
+.seam-badge-interactive {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-dim);
-  background: var(--bg);
-  padding: 6px 18px;
-  border: 1px solid var(--border-bright);
+  font-weight: 700;
+  padding: 10px 24px;
+  margin: 0 20px;
   border-radius: 999px;
+  background: rgba(14, 18, 15, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-bright);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.seam-badge-interactive:hover {
+  transform: scale(1.04);
+  border-color: var(--eco-bright);
+  box-shadow: 0 0 20px var(--eco-glow), 0 0 20px var(--copper-glow);
+}
+
+.seam-badge-interactive .tag-hw {
+  color: var(--copper-bright);
+}
+
+.seam-badge-interactive .arrow {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.seam-badge-interactive .tag-sw {
+  color: var(--eco-bright);
+}
+
+.seam-line-right {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--eco-bright), var(--eco), transparent);
+  box-shadow: 0 0 10px var(--eco-glow);
+  position: relative;
+}
+
+.seam-line-right::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  background: var(--eco-bright);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--eco-bright);
+  animation: pulseGlow 1.8s infinite 0.9s;
 }
 
 /* ============ SHARED SECTIONS ============ */
@@ -1182,6 +1309,12 @@ footer.site-footer p {
 }
 
 /* ============ RESPONSIVE BREAKPOINTS ============ */
+@media (max-width: 900px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 820px) {
   .nav-links {
     display: none;
@@ -1214,9 +1347,17 @@ footer.site-footer p {
     grid-template-columns: 1fr;
     gap: 8px;
   }
+  .seam-badge-interactive {
+    font-size: 0.68rem;
+    padding: 8px 16px;
+    margin: 0 10px;
+  }
 }
 
 @media (max-width: 600px) {
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
   .cf-row {
     grid-template-columns: 1fr;
   }
@@ -1224,6 +1365,14 @@ footer.site-footer p {
     flex-direction: column;
   }
   .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .resume-bar-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .resume-bar-group .btn {
     width: 100%;
     justify-content: center;
   }
