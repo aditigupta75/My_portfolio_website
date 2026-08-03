@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditi Gupta — Electronics & Telecom Engineer | Embedded, RF & Applied ML</title>
+  <meta name="description" content="Portfolio of Aditi Gupta, an Electronics & Telecommunication Engineering graduate working across embedded systems, RF/antenna design, and applied machine learning, with a DRDO research background.">
+  <meta name="theme-color" content="#0a0d0b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230a0d0b'/%3E%3Cpath d='M20 50 H45 V30 H80 M20 50 H45 V70 H80' stroke='%233fae64' stroke-width='6' fill='none'/%3E%3Ccircle cx='20' cy='50' r='6' fill='%23c17a3d'/%3E%3Ccircle cx='80' cy='30' r='6' fill='%233fae64'/%3E%3Ccircle cx='80' cy='70' r='6' fill='%233fae64'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aditi Gupta — Electronics & Telecom Engineer | Embedded, RF & Applied ML">
+  <meta property="og:description" content="Hardware ⇄ Software portfolio: embedded systems, RF/antenna design, radar signal processing, and applied machine learning.">
+  <meta property="og:url" content="https://aditi-gupta-portfolio.vercel.app/">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aditi Gupta",
+    "jobTitle": "Electronics & Telecommunication Engineer",
+    "email": "mailto:ag0484363@gmail.com",
+    "telephone": "+91-7805999464",
+    "address": {"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411043","addressCountry":"IN"},
+    "alumniOf": {"@type":"CollegeOrUniversity","name":"Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune"},
+    "sameAs": ["https://www.linkedin.com/in/aditi-gupta-303420258", "https://github.com/aditigupta75"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- External Clean Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-name">Aditi Gupta <span class="slash mono">/</span> <span class="mono">Hardware ⇄ Software</span></div>
+    <div class="switcher" role="tablist" aria-label="Jump to track">
+      <button class="on-hw active" id="btnHw" role="tab" aria-selected="true">Hardware</button>
+      <button class="on-sw" id="btnSw" role="tab" aria-selected="false">Software</button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a class="contact-link" href="https://github.com/aditigupta75" target="_blank" rel="noopener">GitHub</a>
+      <div class="resume-dropdown">
+        <button class="resume-dropdown-btn" id="resumeDropdownBtn" aria-expanded="false" aria-haspopup="true">
+          ↓ Resumes <span style="font-size:0.6rem; opacity:0.8;">▼</span>
+        </button>
+        <div class="resume-dropdown-menu" id="resumeDropdownMenu" role="menu">
+          <a class="resume-dropdown-item" href="./resume-general.pdf" target="_blank" download="Aditi_Gupta_Resume_General.pdf" role="menuitem">
+            <span class="resume-item-title">📄 General ETE Resume</span>
+            <span class="resume-item-desc">Comprehensive hardware, software &amp; R&amp;D profile</span>
+          </a>
+          <a class="resume-dropdown-item" href="./resume-hardware.pdf" target="_blank" download="Aditi_Gupta_CV_Hardware.pdf" role="menuitem">
+            <span class="resume-item-title" style="color:var(--copper-bright)">⚡ Hardware &amp; RF CV</span>
+            <span class="resume-item-desc">DRDO research, antenna design, embedded &amp; VLSI</span>
+          </a>
+          <a class="resume-dropdown-item" href="./resume-aiml.pdf" target="_blank" download="Aditi_Gupta_Resume_AIML.pdf" role="menuitem">
+            <span class="resume-item-title" style="color:var(--eco-bright)">🧠 AI &amp; ML Resume</span>
+            <span class="resume-item-desc">Sensor fusion, CNN models &amp; applied ML pipelines</span>
+          </a>
+        </div>
+      </div>
+      <a class="contact-link fill" href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="wrap">
+      <div class="hero-eyebrow mono">Electronics &amp; Telecommunication Engineering · 2026</div>
+      <h1 class="hero-title">One engineer, two disciplines: <span class="split">circuits and code.</span></h1>
+      <p class="hero-sub">I design the sensors and RF front-ends that capture a signal, and the firmware, backends, and ML pipelines that turn it into something useful. This site is split the way my work is split — explore either track, or scroll through both.</p>
+      <div class="hero-cta">
+        <a class="btn btn-hw" href="#hardware">→ Hardware &amp; Signals</a>
+        <a class="btn btn-sw" href="#software">→ Software &amp; Intelligence</a>
+      </div>
+      <div class="resume-hero-bar">
+        <span class="resume-hero-label">Download Resumes:</span>
+        <a class="btn" style="font-size:0.72rem; padding:7px 12px;" href="./resume-general.pdf" target="_blank" download="Aditi_Gupta_Resume_General.pdf">↓ General ETE</a>
+        <a class="btn btn-hw" style="font-size:0.72rem; padding:7px 12px;" href="./resume-hardware.pdf" target="_blank" download="Aditi_Gupta_CV_Hardware.pdf">↓ Hardware &amp; RF CV</a>
+        <a class="btn btn-sw" style="font-size:0.72rem; padding:7px 12px;" href="./resume-aiml.pdf" target="_blank" download="Aditi_Gupta_Resume_AIML.pdf">↓ AI &amp; ML Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-body">
+          <p><strong>About.</strong> I'm an Electronics &amp; Telecommunication Engineering graduate (BV(DU)COE, Pune, 2026) working across embedded systems, RF/antenna design, and applied machine learning — designing the sensors and circuits that capture a signal, and the firmware and models that make sense of it.</p>
+          <p>My DRDO research internship at DIAT sharpened the hardware/RF side of that; my work on multimodal sensor fusion and CNN classification sharpened the ML side. I build full-stack software alongside both, because most real sensing systems live or die on the software wrapped around them.</p>
+          <p>I'm currently looking for entry-level opportunities in <strong>defense R&amp;D, embedded/VLSI engineering, and applied AI/ML</strong>.</p>
+        </div>
+        <div class="spec-card">
+          <div class="comment">// quick facts</div>
+          <dl>
+            <div class="spec-row"><dt>role</dt><dd>ETE Grad · R&amp;D / ML</dd></div>
+            <div class="spec-row"><dt>focus</dt><dd>Embedded · RF · ML</dd></div>
+            <div class="spec-row"><dt>location</dt><dd>Pune, IN</dd></div>
+            <div class="spec-row"><dt>status</dt><dd>Open to work</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HARDWARE TRACK ============ -->
+  <section class="track hw" id="hardware">
+    <div class="wrap">
+      <div class="track-head"><span class="track-tag mono">Track 01</span><div class="track-rule"></div></div>
+      <h2 class="track-title">Hardware &amp; Signals</h2>
+      <p class="track-intro">Embedded systems, RF/antenna design, and radar signal processing — the physical layer. Includes a DRDO research internship focused on electromagnetic simulation and a hands-on hardware build with IDRO.</p>
+      <div style="margin:-24px 0 38px;">
+        <a class="btn btn-hw" style="font-size:0.76rem;" href="./resume-hardware.pdf" target="_blank" download="Aditi_Gupta_CV_Hardware.pdf">↓ Download Hardware &amp; RF CV (PDF)</a>
+      </div>
+
+      <div class="diagram-panel">
+        <svg viewBox="0 0 280 200" aria-hidden="true">
+          <rect x="0" y="0" width="280" height="200" fill="none"/>
+          <g stroke="#c17a3d" stroke-width="2" fill="none" opacity="0.85">
+            <path d="M20 40 H100 V80 H180 V40 H260"/>
+            <path d="M20 100 H60 V160 H140"/>
+            <path d="M140 160 V120 H220 V160 H260"/>
+            <path d="M100 80 V140 H140"/>
+          </g>
+          <g fill="#e6a75f">
+            <circle cx="20" cy="40" r="4"/><circle cx="260" cy="40" r="4"/>
+            <circle cx="20" cy="100" r="4"/><circle cx="140" cy="160" r="4"/>
+            <circle cx="260" cy="160" r="4"/><circle cx="100" cy="80" r="4"/>
+          </g>
+          <g fill="none" stroke="#7a4a24" stroke-width="1" opacity="0.5">
+            <rect x="90" y="30" width="20" height="20" rx="2"/>
+            <rect x="130" y="150" width="20" height="20" rx="2"/>
+          </g>
+        </svg>
+        <div class="diagram-copy">
+          <h3>System &amp; PCB architecture</h3>
+          <p>Two-layer custom PCB layouts, mixed contact/non-contact sensor arrays, and ESP32/FreeRTOS firmware for real-time acquisition — the pattern behind most of the hardware builds below.</p>
+          <div class="diagram-note">Schematic is illustrative, not a literal board layout.</div>
+        </div>
+      </div>
+
+      <div class="case-study">
+        <div class="case-eyebrow">Case study — flagship project</div>
+        <div class="case-title">Wearable Multi-Sensor Radar Health-Monitoring System</div>
+        <div class="case-stack">Custom PCB (EasyEDA) · ESP32/FreeRTOS · RD-03E 24 GHz mmWave Radar · CNN · MQTT → MongoDB</div>
+        <div class="case-cols">
+          <div class="case-col">
+            <h4>Problem</h4>
+            <p>Contact biosensors alone (heart-rate, GSR, temperature, motion) become unreliable the moment they're dislodged during sleep — the exact scenario continuous monitoring needs to survive.</p>
+          </div>
+          <div class="case-col">
+            <h4>Approach</h4>
+            <p>Designed a 2-layer custom PCB fusing MAX30102, GSR, TMP117, and BNO055 contact sensors with a non-contact 24 GHz mmWave radar module. ESP32/FreeRTOS firmware handles real-time acquisition and switches adaptively between contact and contactless modes. A CNN classifies sleep/health state from the fused stream; MQTT feeds a MongoDB backend for storage.</p>
+          </div>
+          <div class="case-col">
+            <h4>Result</h4>
+            <p>An end-to-end, patent-oriented prototype spanning PCB, firmware, ML, and cloud. The classification pipeline reached ~80% accuracy in preliminary, informal testing — not yet formally validated on a defined test set.</p>
+          </div>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/aditigupta75" target="_blank" rel="noopener">Code (private — pending publication) ↗</a>
+          <a href="#software">→ See the ML side in Software track</a>
+        </div>
+      </div>
+
+      <div class="subhead mono">Experience</div>
+      <div class="xp-item">
+        <div class="xp-period mono">MAY — JUL 2025</div>
+        <div>
+          <div class="xp-role">Research Intern</div>
+          <div class="xp-org">Defence Institute of Advanced Technology (DIAT), DU, DRDO — Pune</div>
+          <ul>
+            <li>Developed an H-slotted microstrip patch antenna for dual-band RFID applications, simulating a −25 dB return loss at 2.58 GHz with 7.6 dBi gain using CST Studio Suite.</li>
+            <li>Completed a 3-month government R&amp;D internship spanning hardware prototyping, electromagnetic simulation, and technical reporting under the guidance of Dr. Rajesh Singh.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="xp-item">
+        <div class="xp-period mono">JUL 2025 — PRESENT</div>
+        <div>
+          <div class="xp-role">Team Member</div>
+          <div class="xp-org">IDRO · Research &amp; Innovation Foundation</div>
+          <ul>
+            <li>Contributed end-to-end to IDRO's first indigenous drone project — system design through 3D-printed assembly to a flight-ready prototype.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subhead mono">Other projects</div>
+      <div class="proj-grid">
+        <article class="proj-card">
+          <div class="proj-title">RFID Antenna Design</div>
+          <div class="proj-stack mono">CST Studio Suite · Electromagnetics</div>
+          <ul>
+            <li>H-slotted microstrip patch antenna for dual-band RFID, simulated at −25 dB return loss / 7.6 dBi gain.</li>
+            <li>Documented as part of an unpublished DIAT–DRDO research manuscript.</li>
+          </ul>
+        </article>
+        <article class="proj-card">
+          <div class="proj-title">Traffic Light Controller (FSM) &amp; RTOS Task Sync</div>
+          <div class="proj-stack mono">VHDL · Keil µVision · ARM LPC2148</div>
+          <ul>
+            <li>FSM-based controller design in VHDL.</li>
+            <li>Semaphore-synchronized task scheduling on LPC2148 for safe multitasking.</li>
+          </ul>
+          <div class="proj-links"><a href="https://github.com/aditigupta75" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+      </div>
+
+      <div class="subhead mono">Skills</div>
+      <div class="skill-grid">
+        <div class="skill-block">
+          <div class="skill-label">Embedded &amp; VLSI</div>
+          <div class="skill-tags"><span>ARM LPC2148</span><span>8051</span><span>ESP32/FreeRTOS</span><span>Verilog</span><span>VHDL</span><span>CMOS</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">RF &amp; Signal</div>
+          <div class="skill-tags"><span>Antenna design</span><span>FMCW radar</span><span>FIR/IIR filters</span><span>DSP</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Tools</div>
+          <div class="skill-tags"><span>Vivado</span><span>Proteus</span><span>Keil</span><span>Altium</span><span>EasyEDA</span><span>MATLAB</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEAM ============ -->
+  <div class="seam" aria-hidden="true">
+    <svg viewBox="0 0 1120 130" preserveAspectRatio="none">
+      <path d="M0 65 H420" stroke="#c17a3d" stroke-width="2" fill="none" opacity="0.5"/>
+      <path d="M420 65 C 520 65, 560 20, 700 20 S 880 65, 1120 65" stroke="url(#seamGrad)" stroke-width="2" fill="none"/>
+      <path d="M700 20 L1120 20" stroke="#3fae64" stroke-width="2" fill="none" opacity="0.5"/>
+      <defs>
+        <linearGradient id="seamGrad" x1="0" x2="1">
+          <stop offset="0" stop-color="#c17a3d"/>
+          <stop offset="1" stop-color="#3fae64"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="seam-label">signal → software</div>
+  </div>
+
+  <!-- ============ SOFTWARE TRACK ============ -->
+  <section class="track sw" id="software">
+    <div class="wrap">
+      <div class="track-head"><span class="track-tag mono">Track 02</span><div class="track-rule"></div></div>
+      <h2 class="track-title">Software &amp; Intelligence</h2>
+      <p class="track-intro">Applied machine learning, full-stack engineering, and data analytics — turning raw sensor and transaction data into efficient, decision-ready systems. The emphasis throughout is resourcefulness: fewer moving parts, clearer signal, less waste.</p>
+      <div style="margin:-24px 0 38px;">
+        <a class="btn btn-sw" style="font-size:0.76rem;" href="./resume-aiml.pdf" target="_blank" download="Aditi_Gupta_Resume_AIML.pdf">↓ Download AI &amp; ML Specialization Resume (PDF)</a>
+      </div>
+
+      <div class="diagram-panel">
+        <div class="diagram-copy">
+          <h3>Multimodal classification pipeline</h3>
+          <p>A CNN-based classifier fuses contact-sensor and radar streams into a single sleep/health-state prediction, with a cloud backend (MQTT → MongoDB) handling ingestion and storage.</p>
+          <div class="diagram-note">Chart is a conceptual illustration of the fusion pipeline, not measured performance data.</div>
+        </div>
+        <svg viewBox="0 0 280 200" aria-hidden="true">
+          <g stroke="#3fae64" stroke-width="2" fill="none" opacity="0.9">
+            <polyline points="10,170 50,150 90,155 130,110 170,120 210,70 250,55"/>
+          </g>
+          <g fill="#6fe28f">
+            <circle cx="10" cy="170" r="3"/><circle cx="50" cy="150" r="3"/><circle cx="90" cy="155" r="3"/>
+            <circle cx="130" cy="110" r="3"/><circle cx="170" cy="120" r="3"/><circle cx="210" cy="70" r="3"/><circle cx="250" cy="55" r="3"/>
+          </g>
+          <line x1="10" y1="180" x2="270" y2="180" stroke="#284d34" stroke-width="1"/>
+          <line x1="10" y1="10" x2="10" y2="180" stroke="#284d34" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="subhead mono">Projects</div>
+      <div class="proj-grid">
+        <article class="proj-card">
+          <div class="proj-title">Sleep/Health-State Classification Pipeline</div>
+          <div class="proj-stack mono">Python · CNN · MQTT · MongoDB</div>
+          <ul>
+            <li>Built a CNN-based classifier over fused biosensor and radar data streams.</li>
+            <li>Reached ~80% accuracy in preliminary, informal testing — not yet formally validated on a defined test set.</li>
+          </ul>
+          <div class="proj-links"><a href="#hardware">↑ See the hardware case study</a></div>
+        </article>
+        <article class="proj-card">
+          <div class="proj-title">Financial Behavior Analysis Platform</div>
+          <div class="proj-stack mono">Spring Boot · REST APIs · Chart.js</div>
+          <ul>
+            <li>Full-stack expense management system automating transaction tracking, categorization, and persistence.</li>
+            <li>Interactive dashboard visualizing spending trends for faster, data-driven decisions.</li>
+          </ul>
+          <div class="proj-links"><a href="https://github.com/aditigupta75" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+        <article class="proj-card">
+          <div class="proj-title">Healthcare Data Analytics &amp; Decision Support</div>
+          <div class="proj-stack mono">SQL · Power BI</div>
+          <ul>
+            <li>Normalized relational schema for multi-entity hospital data with automated billing logic.</li>
+            <li>KPI-driven dashboards for real-time reporting and anomaly detection.</li>
+          </ul>
+          <div class="proj-links"><a href="https://github.com/aditigupta75" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+        <article class="proj-card">
+          <div class="proj-title">Digital Hearing Aid</div>
+          <div class="proj-stack mono">Python · DSP</div>
+          <ul>
+            <li>Real-time FIR vs. IIR filter comparison for noise reduction.</li>
+            <li>Benchmarked sub-100ms latency with minimal phase distortion.</li>
+          </ul>
+          <div class="proj-links"><a href="https://github.com/aditigupta75" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+      </div>
+
+      <div class="subhead mono">Skills</div>
+      <div class="skill-grid">
+        <div class="skill-block">
+          <div class="skill-label">Machine Learning</div>
+          <div class="skill-tags"><span>CNN / sensor fusion</span><span>Applied deep learning</span><span>Python</span><span>Jupyter</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Backend &amp; APIs</div>
+          <div class="skill-tags"><span>Spring Boot</span><span>Node.js</span><span>REST</span><span>Java</span><span>JS/TS</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Data &amp; Analytics</div>
+          <div class="skill-tags"><span>SQL</span><span>MongoDB</span><span>Power BI</span><span>Tableau</span><span>Chart.js</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Languages</div>
+          <div class="skill-tags"><span>Python</span><span>Java</span><span>C</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Cloud &amp; DevOps</div>
+          <div class="skill-tags"><span>GCP</span><span>AWS</span><span>Git</span><span>CI/CD fundamentals</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Core CS &amp; Tools</div>
+          <div class="skill-tags"><span>DSA</span><span>OOP</span><span>DBMS</span><span>Agile/Scrum</span><span>GitHub</span><span>VS Code</span><span>LaTeX</span><span>Jupyter</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHARED: PUBLICATIONS / EDUCATION ============ -->
+  <section class="shared">
+    <div class="wrap">
+      <div class="section-head"><span class="section-tag">Publications, awards &amp; education</span><div class="rule"></div></div>
+      <div class="two-col">
+        <div class="flat-list">
+          <div class="flat-item">
+            <div class="flat-title">Best Paper Award — Co-Author</div>
+            <div class="flat-sub mono">RRRAI 2026 · Responsible, Risk-Aware &amp; Regulated AI · BV(DU)COEP</div>
+            <div class="flat-desc">Recognized for methodological rigor in AI safety, algorithmic transparency, and bias mitigation.</div>
+          </div>
+          <div class="flat-item">
+            <div class="flat-title">RFID Antenna Design Research</div>
+            <div class="flat-sub mono">Unpublished manuscript · DIAT–DRDO</div>
+            <div class="flat-desc">H-slotted microstrip patch antenna for dual-band RFID applications.</div>
+          </div>
+        </div>
+        <div class="flat-list">
+          <div class="flat-item">
+            <div class="flat-title">B.Tech, Electronics &amp; Telecommunication Engineering</div>
+            <div class="flat-sub mono">BV(DU)COE, Pune · 2022–2026 · CGPA 8.4</div>
+            <div class="flat-desc">Coursework: Embedded Systems, DSP, VLSI &amp; Digital Logic, Computer Networks, Probability &amp; Statistics, DBMS.</div>
+          </div>
+          <div class="flat-item">
+            <div class="flat-title">Certifications &amp; Leadership</div>
+            <div class="flat-desc">VLSI SoC Design (Maven Silicon) · 100 Days of Code (Udemy) · Java Masterclass 2025 (Udemy) · Editorial &amp; Envoy Head, ETSA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <h2>Two tracks, one engineer.</h2>
+      <p>Open to entry-level roles across embedded/VLSI, applied AI/ML, and defense R&amp;D. Reach out directly, or use the form below.</p>
+      <div class="contact-row">
+        <a class="btn btn-hw" href="mailto:ag0484363@gmail.com">ag0484363@gmail.com</a>
+        <a class="btn btn-sw" href="tel:+917805999464">+91 78059 99464</a>
+        <a class="btn btn-hw" href="https://www.linkedin.com/in/aditi-gupta-303420258" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-sw" href="https://github.com/aditigupta75" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="cf-field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email">
+          </div>
+        </div>
+        <div class="cf-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="4" required></textarea>
+        </div>
+        <!-- honeypot field -->
+        <input type="text" name="company" id="cf-company" class="cf-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-sw" type="submit" id="cfSubmit">Send message</button>
+        <p class="cf-status" id="cfStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="foot-note mono">PUNE, MAHARASHTRA · 411043</div>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>

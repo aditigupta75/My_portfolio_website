@@ -1,0 +1,9 @@
+{
+  "name": "aditi-gupta-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aditi Gupta — Electronics & Telecom / Applied ML portfolio, deployed as a static site with one Vercel serverless function for the contact form.",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
