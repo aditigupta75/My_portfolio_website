@@ -284,14 +284,20 @@
       var messageVal = document.getElementById('cf-message').value.trim();
 
       if (!nameVal || !emailVal || !messageVal) {
-        statusEl.textContent = 'Please fill in all required fields.';
-        statusEl.className = 'cf-status err';
+        if (statusEl) {
+          statusEl.textContent = 'Please fill in all required fields.';
+          statusEl.className = 'cf-status err';
+        }
         return;
       }
 
-      submitBtn.disabled = true;
-      statusEl.textContent = 'Sending message…';
-      statusEl.className = 'cf-status';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+      }
+      if (statusEl) {
+        statusEl.textContent = 'Sending message…';
+        statusEl.className = 'cf-status';
+      }
 
       fetch('/api/contact', {
         method: 'POST',
@@ -299,20 +305,43 @@
         body: JSON.stringify({ name: nameVal, email: emailVal, message: messageVal })
       })
         .then(function (res) {
-          if (!res.ok) throw new Error('Network error');
-          return res.json();
+          return res.text().then(function (text) {
+            var data = {};
+            if (text) {
+              try {
+                data = JSON.parse(text);
+              } catch (err) {
+                data = {};
+              }
+            }
+            if (!res.ok || !data.ok) {
+              throw new Error(data.error || 'Unable to send message.');
+            }
+            return data;
+          });
         })
         .then(function () {
-          statusEl.textContent = 'Message sent successfully — thank you!';
-          statusEl.className = 'cf-status ok';
+          if (statusEl) {
+            statusEl.textContent = 'Message sent successfully — thank you!';
+            statusEl.className = 'cf-status ok';
+          }
           contactForm.reset();
         })
         .catch(function () {
-          statusEl.textContent = 'Something went wrong — please email ag0484363@gmail.com directly.';
-          statusEl.className = 'cf-status err';
+          var fallbackSubject = 'Portfolio contact from ' + nameVal;
+          var fallbackBody = ['Name: ' + nameVal, 'Email: ' + emailVal, '', 'Message:', messageVal].join('\n');
+          var mailtoUrl = 'mailto:ag0484363@gmail.com?subject=' + encodeURIComponent(fallbackSubject) + '&body=' + encodeURIComponent(fallbackBody);
+          window.location.href = mailtoUrl;
+
+          if (statusEl) {
+            statusEl.textContent = 'Your email app opened with your message ready to send.';
+            statusEl.className = 'cf-status ok';
+          }
         })
         .finally(function () {
-          submitBtn.disabled = false;
+          if (submitBtn) {
+            submitBtn.disabled = false;
+          }
         });
     });
   }

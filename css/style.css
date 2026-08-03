@@ -277,10 +277,35 @@ header.nav {
   color: var(--text);
 }
 
+.resume-item-title-accent {
+  color: var(--eco-bright);
+}
+
 .resume-item-desc {
   font-size: 0.7rem;
   color: var(--text-dim);
   margin-top: 2px;
+}
+
+.resume-dropdown-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resume-dropdown-caret {
+  font-size: 0.6rem;
+  opacity: 0.8;
+}
+
+.resume-hero-pill,
+.track-resume-pill {
+  font-size: 0.72rem;
+  padding: 7px 12px;
+}
+
+.track-resume-pill {
+  font-size: 0.76rem;
 }
 
 .menu-toggle {
@@ -969,11 +994,11 @@ h2.track-title {
   transform: scale(1.15);
 }
 
-/* ============ REDESIGNED INTERACTIVE SEAM DIVIDER ============ */
+/* ============ PROFESSIONAL DEVELOPER SEAM DIVIDER (NO EMOJIS) ============ */
 .seam {
   position: relative;
-  padding: 60px 0;
-  background: linear-gradient(180deg, var(--hw-panel) 0%, var(--bg) 50%, var(--sw-panel) 100%);
+  padding: 54px 0;
+  background: linear-gradient(180deg, var(--hw-panel) 0%, #0c100d 50%, var(--sw-panel) 100%);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
@@ -984,10 +1009,10 @@ h2.track-title {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 120px;
-  background: radial-gradient(ellipse at center, rgba(193, 122, 61, 0.15) 0%, rgba(63, 174, 100, 0.15) 50%, transparent 70%);
-  filter: blur(25px);
+  width: 700px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, rgba(193, 122, 61, 0.12) 0%, rgba(63, 174, 100, 0.12) 60%, transparent 80%);
+  filter: blur(30px);
   pointer-events: none;
 }
 
@@ -1004,9 +1029,9 @@ h2.track-title {
 
 .seam-line-left {
   flex: 1;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(90deg, transparent, var(--copper), var(--copper-bright));
-  box-shadow: 0 0 10px var(--copper-glow);
+  box-shadow: 0 0 8px var(--copper-glow);
   position: relative;
 }
 
@@ -1014,59 +1039,60 @@ h2.track-title {
   content: '';
   position: absolute;
   right: 0;
-  top: -4px;
-  width: 10px;
-  height: 10px;
+  top: -3px;
+  width: 7px;
+  height: 7px;
   background: var(--copper-bright);
   border-radius: 50%;
-  box-shadow: 0 0 12px var(--copper-bright);
-  animation: pulseGlow 1.8s infinite;
+  box-shadow: 0 0 10px var(--copper-bright);
 }
 
-.seam-badge-interactive {
+.seam-badge-pro {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 700;
-  padding: 10px 24px;
-  margin: 0 20px;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 0 18px;
   border-radius: 999px;
-  background: rgba(14, 18, 15, 0.92);
+  background: rgba(14, 18, 15, 0.95);
   backdrop-filter: blur(16px);
   border: 1px solid var(--border-bright);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
-.seam-badge-interactive:hover {
-  transform: scale(1.04);
+.seam-badge-pro:hover {
   border-color: var(--eco-bright);
-  box-shadow: 0 0 20px var(--eco-glow), 0 0 20px var(--copper-glow);
+  box-shadow: 0 0 16px var(--eco-glow), 0 0 16px var(--copper-glow);
+  transform: translateY(-1px);
 }
 
-.seam-badge-interactive .tag-hw {
+.seam-badge-pro .tag-hw {
   color: var(--copper-bright);
 }
 
-.seam-badge-interactive .arrow {
-  color: var(--text-dim);
-  font-size: 0.9rem;
+.seam-badge-pro .seam-divider {
+  width: 1px;
+  height: 16px;
+  background: linear-gradient(180deg, transparent, var(--border-bright), transparent);
+  display: inline-block;
 }
 
-.seam-badge-interactive .tag-sw {
+.seam-badge-pro .tag-sw {
   color: var(--eco-bright);
 }
 
 .seam-line-right {
   flex: 1;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(90deg, var(--eco-bright), var(--eco), transparent);
-  box-shadow: 0 0 10px var(--eco-glow);
+  box-shadow: 0 0 8px var(--eco-glow);
   position: relative;
 }
 
@@ -1074,13 +1100,12 @@ h2.track-title {
   content: '';
   position: absolute;
   left: 0;
-  top: -4px;
-  width: 10px;
-  height: 10px;
+  top: -3px;
+  width: 7px;
+  height: 7px;
   background: var(--eco-bright);
   border-radius: 50%;
-  box-shadow: 0 0 12px var(--eco-bright);
-  animation: pulseGlow 1.8s infinite 0.9s;
+  box-shadow: 0 0 10px var(--eco-bright);
 }
 
 /* ============ SHARED SECTIONS ============ */
@@ -1256,6 +1281,14 @@ footer.site-footer p {
   min-height: 1.2em;
 }
 
+.cf-note {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
 .cf-status.ok {
   color: var(--eco-bright);
 }
@@ -1347,10 +1380,10 @@ footer.site-footer p {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  .seam-badge-interactive {
+  .seam-badge-pro {
     font-size: 0.68rem;
-    padding: 8px 16px;
-    margin: 0 10px;
+    padding: 7px 14px;
+    margin: 0 8px;
   }
 }
 
